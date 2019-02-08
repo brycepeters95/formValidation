@@ -10,11 +10,14 @@
 </head>
 
 <body>
+   <!-- wraps the two message after user hits sumbit if error hide success if success hide error message -->
     <div id="wrapper">
        <div id= "successMessage">You did it congrats!!!(logged on)</div>
         <div id= "errorMessage"></div>
 
-        <div class="form-element">
+        <!-- wraps the basic elements in a form element class which has different ids for each element -->
+       
+         <div class="form-element">
 
             <label for="email">Email</label>
             <input type="text" name="email" id="email" placeholder="yourname@email.com">
@@ -50,12 +53,14 @@
 
     </div>
     <script type=" text/javascript">
+        // a function that test that this a valid email address
         function isEmail(email) {
 
             var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
             return regex.test(email);
         }
+        // when user hits sumbit a function that checks each field is valid, if there are one more errors it will alert the user about all errors also alert user if any of the fields are missing. If all fields are valid success message will show
         $("#submitButton").click(function() {
 
             var errorMessage = "";
